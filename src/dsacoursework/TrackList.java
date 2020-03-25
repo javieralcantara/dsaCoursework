@@ -24,6 +24,9 @@ public class TrackList implements IADTrackList {
     }
 
     @Override
+    /** Adds a new Track to the TrackList.
+     * @param newTrack A Track to add.
+    */
     public void addTrack(Track newTrack) {
         Node newNode = new Node(newTrack);
         newNode.next = null;
@@ -41,11 +44,18 @@ public class TrackList implements IADTrackList {
     }
 
     @Override
+    /** Displays a single Track from the TrackList.
+     * @param _track A Track to be displayed.
+    */
     public void displayTrack(Track _track) {
         _track.displayTrackInfo();
     }
 
     @Override
+    /** Displays all Tracks matching a specific genre from the TrackList.
+     * @param _genre A String String containing the
+     *     Track’s genre.
+    */
     public void displayAllGenre(String _genre) {
         Node actualNode = this.head;
 
@@ -62,6 +72,8 @@ public class TrackList implements IADTrackList {
     }
 
     @Override
+    /** Displays all Tracks from the TrackList.
+    */
     public void displayAllTracks() {
         Node actualNode = this.head;
 
@@ -76,6 +88,11 @@ public class TrackList implements IADTrackList {
     }
 
     @Override
+    /** Searches for a single Track by title from the TrackList.
+     * @param _title A String containing the
+     *     Track’s title.
+     * @return The Track searched or an empty Track if not found.
+    */
     public Track searchByTitle(String _title) {
         Node actualNode = this.head;
 
@@ -91,6 +108,11 @@ public class TrackList implements IADTrackList {
     }
 
     @Override
+    /** Searches for a single Track by artist from the TrackList.
+     * @param _artist A String containing the
+     *     Track’s artist.
+     * @return The Track searched or an empty Track if not found.
+    */
     public Track searchByArtist(String _artist) {
         Node actualNode = this.head;
 

@@ -16,6 +16,8 @@ import java.util.Scanner;
 public class TrackBST {
     //BinarySearchTree<Track> myTrackBST = new BinarySearchTree<Track>();
     
+    /** Loads a file containing a number of Tracks into a BinarySearchTree.
+    */
     public void loadData() {
         try {
             File myObj = new File("../dsaCoursework/src/dsaCoursework/trackInput");
