@@ -9,4 +9,4 @@ Javier Alcántara García
 ### Course
 BSC Computing
 
-**Date** : TO be added
+**Date** : To be added
