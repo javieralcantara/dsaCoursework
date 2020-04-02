@@ -1,10 +1,8 @@
 /*<listing chapter="6" section="4">*/
-package dsaCoursework;
+package dsacoursework;
 
 import java.util.List;
 import java.util.ArrayList;
-import dsaCoursework.SearchTree;
-
 
 /**
  * A class to represent a binary search tree.
@@ -13,7 +11,7 @@ import dsaCoursework.SearchTree;
  */
 public class BinarySearchTree<E extends Comparable<E>>
         extends BinaryTree<E>
-        implements SearchTree<E>
+        implements SearchTree<E> 
 {
     // Data Fields
 
@@ -21,7 +19,6 @@ public class BinarySearchTree<E extends Comparable<E>>
     protected boolean addReturn;
     /** Return value from the public delete method. */
     protected E deleteReturn;
-
 
     //Methods
     /*<listing chapter="6" number="3">*/
@@ -33,7 +30,6 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @return The object, if found, otherwise null
      */
     
-    @Override
     public E find(E target) {
         return find(root, target);
     }
@@ -70,7 +66,6 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @return true if the object is inserted, false
      *         if the object already exists in the tree
      */
-    @Override
     public boolean add(E item) {
         root = add(root, item);
         return addReturn;
@@ -116,7 +111,6 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @throws ClassCastException if target does not implement
      *         Comparable
      */
-    @Override
     public E delete(E target) {
         root = delete(root, target);
         return deleteReturn;
@@ -190,7 +184,6 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @post target is not in the tree
      * @throws ClassCastException if target is not Comparable
      */
-    @Override
     public boolean remove(E target) {
         return delete(target) != null;
     }
@@ -201,7 +194,6 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @return true If the item is in the tree, false otherwise
      * @throws ClassCastException if target is not Comparable
      */
-    @Override
     public boolean contains(E target) {
         return find(target) != null;
     }

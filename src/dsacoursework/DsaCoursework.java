@@ -106,7 +106,8 @@ public class DsaCoursework {
     }
     
     private void testTrackBSTClass() {
-        
+        //todo
+        TrackBST myTree = new TrackBST();
     }
     
     public String getMenuChoice( ) {

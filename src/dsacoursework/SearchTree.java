@@ -1,4 +1,4 @@
-package dsaCoursework;
+package dsacoursework;
 
 /**
  * Interface to define a search tree

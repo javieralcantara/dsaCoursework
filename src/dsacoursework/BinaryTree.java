@@ -1,5 +1,5 @@
 /*<listing chapter="6" section="3">*/
-package dsaCoursework;
+package dsacoursework;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -289,6 +289,6 @@ public class BinaryTree<E> implements Serializable {
             stb.append(")");
         }
     }
-    
+    /*</exercise>*/
 }
 /*</listing>*/

@@ -14,7 +14,11 @@ import java.util.Scanner;
  * @author Javier Alcántara García
  */
 public class TrackBST {
-    //BinarySearchTree<Track> myTrackBST = new BinarySearchTree<Track>();
+    BinarySearchTree<String> myTrackBST = new BinarySearchTree();
+    
+    TrackBST() {
+        System.out.println("TrackBST object created");
+    }
     
     /** Loads a file containing a number of Tracks into a BinarySearchTree.
     */
