@@ -6,35 +6,35 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /**
- * Class for a binary tree that stores type E objects.
+ * Class for a binary tree that stores type Track objects.
  *
  * @author Koffman and Wolfgang
- * @param <E>
+ * @param <Track>
  *
  */
-public class BinaryTree<E> implements Serializable {
+public class BinaryTree<Track> implements Serializable {
 
     /*<listing chapter="6" number="1">*/
     /**
      * Class to encapsulate a tree node.
      *
-     * @param <E>
+     * @param <Track>
      */
-    protected static class Node<E> implements Serializable {
+    protected static class Node<Track> implements Serializable {
         // Data Fields
 
         /**
          * The information stored in this node.
          */
-        public E data;
+        public Track data;
         /**
          * Reference to the left child.
          */
-        public Node<E> left;
+        public Node<Track> left;
         /**
          * Reference to the right child.
          */
-        public Node<E> right;
+        public Node<Track> right;
 
         // Constructors
         /**
@@ -42,7 +42,7 @@ public class BinaryTree<E> implements Serializable {
          *
          * @param data The data to store in this node
          */
-        public Node(E data) {
+        public Node(Track data) {
             this.data = data;
             left = null;
             right = null;
@@ -65,7 +65,7 @@ public class BinaryTree<E> implements Serializable {
     /**
      * The root of the binary tree
      */
-    protected Node<E> root;
+    protected Node<Track> root;
 
     /**
      * Construct an empty BinaryTree
@@ -80,7 +80,7 @@ public class BinaryTree<E> implements Serializable {
      *
      * @param root The node that is the root of the tree.
      */
-    protected BinaryTree(Node<E> root) {
+    protected BinaryTree(Node<Track> root) {
         this.root = root;
     }
 
@@ -91,7 +91,7 @@ public class BinaryTree<E> implements Serializable {
      * @param leftTree
      * @param rightTree
      */
-    public BinaryTree(E data, BinaryTree<E> leftTree, BinaryTree<E> rightTree) {
+    public BinaryTree(Track data, BinaryTree<Track> leftTree, BinaryTree<Track> rightTree) {
         root = new Node<>(data);
         if (leftTree != null) {
             root.left = leftTree.root;
@@ -111,7 +111,7 @@ public class BinaryTree<E> implements Serializable {
      * @return The left subtree or null if either the root or the left subtree
      * is null
      */
-    public BinaryTree<E> getLeftSubtree() {
+    public BinaryTree<Track> getLeftSubtree() {
         if (root != null && root.left != null) {
             return new BinaryTree<>(root.left);
         } else {
@@ -125,7 +125,7 @@ public class BinaryTree<E> implements Serializable {
      * @return the right sub-tree or null if either the root or the right
      * subtree is null.
      */
-    public BinaryTree<E> getRightSubtree() {
+    public BinaryTree<Track> getRightSubtree() {
         if (root != null && root.right != null) {
             return new BinaryTree<>(root.right);
         } else {
@@ -138,7 +138,7 @@ public class BinaryTree<E> implements Serializable {
      *
      * @return the data field of the root or null if the root is null
      */
-    public E getData() {
+    public Track getData() {
         if (root != null) {
             return root.data;
         } else {
@@ -169,7 +169,7 @@ public class BinaryTree<E> implements Serializable {
      * @param depth The depth
      * @param sb The string buffer to save the output
      */
-    private void preOrderTraverse(Node<E> node, int depth, StringBuilder sb) {
+    private void preOrderTraverse(Node<Track> node, int depth, StringBuilder sb) {
         for (int i = 1; i < depth; i++) {
             sb.append("  ");
         }
@@ -220,7 +220,7 @@ public class BinaryTree<E> implements Serializable {
         return stb.toString();
     }
 
-    private void preorderToString(StringBuilder stb, Node<E> root) {
+    private void preorderToString(StringBuilder stb, Node<Track> root) {
         stb.append(root);
         if (root.left != null) {
             stb.append(" ");
@@ -247,7 +247,7 @@ public class BinaryTree<E> implements Serializable {
         return stb.toString();
     }
 
-    private void postorderToString(StringBuilder stb, Node<E> root) {
+    private void postorderToString(StringBuilder stb, Node<Track> root) {
         if (root.left != null) {
             postorderToString(stb, root.left);
             stb.append(" ");
@@ -276,7 +276,7 @@ public class BinaryTree<E> implements Serializable {
         return stb.toString();
     }
 
-    private void inorderToString(StringBuilder stb, Node<E> root) {
+    private void inorderToString(StringBuilder stb, Node<Track> root) {
         if (root.left != null) {
             stb.append("(");
             inorderToString(stb, root.left);

@@ -7,18 +7,18 @@ import java.util.ArrayList;
 /**
  * A class to represent a binary search tree.
  * @author Koffman and Wolfgang
- * @param <E>
+ * @param <Track>
  */
-public class BinarySearchTree<E extends Comparable<E>>
-        extends BinaryTree<E>
-        implements SearchTree<E> 
+public class BinarySearchTree<Track extends Comparable<Track>>
+        extends BinaryTree<Track>
+        implements SearchTree<Track> 
 {
     // Data Fields
 
     /** Return value from the public add method. */
     protected boolean addReturn;
     /** Return value from the public delete method. */
-    protected E deleteReturn;
+    protected Track deleteReturn;
 
     //Methods
     /*<listing chapter="6" number="3">*/
@@ -30,7 +30,7 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @return The object, if found, otherwise null
      */
     
-    public E find(E target) {
+    public Track find(Track target) {
         return find(root, target);
     }
 
@@ -40,7 +40,7 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @param target The object being sought
      * @return The object, if found, otherwise null
      */
-    private E find(Node<E> localRoot, E target) {
+    private Track find(Node<Track> localRoot, Track target) {
         if (localRoot == null) {
             return null;
         }
@@ -66,7 +66,7 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @return true if the object is inserted, false
      *         if the object already exists in the tree
      */
-    public boolean add(E item) {
+    public boolean add(Track item) {
         root = add(root, item);
         return addReturn;
     }
@@ -80,7 +80,7 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @return The new local root that now contains the
      *         inserted item
      */
-    private Node<E> add(Node<E> localRoot, E item) {
+    private Node<Track> add(Node<Track> localRoot, Track item) {
         if (localRoot == null) {
             // item is not in the tree � insert it.
             addReturn = true;
@@ -111,7 +111,7 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @throws ClassCastException if target does not implement
      *         Comparable
      */
-    public E delete(E target) {
+    public Track delete(Track target) {
         root = delete(root, target);
         return deleteReturn;
     }
@@ -127,7 +127,7 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @return The modified local root that does not contain
      *         the item
      */
-    private Node<E> delete(Node<E> localRoot, E item) {
+    private Node<Track> delete(Node<Track> localRoot, Track item) {
         if (localRoot == null) {
             // item is not in the tree.
             deleteReturn = null;
@@ -184,7 +184,7 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @post target is not in the tree
      * @throws ClassCastException if target is not Comparable
      */
-    public boolean remove(E target) {
+    public boolean remove(Track target) {
         return delete(target) != null;
     }
 
@@ -194,7 +194,7 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @return true If the item is in the tree, false otherwise
      * @throws ClassCastException if target is not Comparable
      */
-    public boolean contains(E target) {
+    public boolean contains(Track target) {
         return find(target) != null;
     }
     /*</exercise>*/
@@ -209,11 +209,11 @@ public class BinarySearchTree<E extends Comparable<E>>
      *        predecessor (ip)
      * @return The data in the ip
      */
-    private E findLargestChild(Node<E> parent) {
+    private Track findLargestChild(Node<Track> parent) {
         // If the right child has no right child, it is
         // the inorder predecessor.
         if (parent.right.right == null) {
-            E returnValue = parent.right.data;
+            Track returnValue = parent.right.data;
             parent.right = parent.right.left;
             return returnValue;
         } else {
@@ -234,7 +234,7 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @throws ClassCastException if target does not implement
      *         Comparable
      */
-    public E deletePrime(E target) {
+    public Track deletePrime(Track target) {
         root = deletePrime(root, target);
         return deleteReturn;
     }
@@ -249,7 +249,7 @@ public class BinarySearchTree<E extends Comparable<E>>
      * @return The modified local root that does not contain
      *         the item
      */
-    private Node<E> deletePrime(Node<E> localRoot, E item) {
+    private Node<Track> deletePrime(Node<Track> localRoot, Track item) {
         if (localRoot == null) {
             // item is not in the tree.
             deleteReturn = null;
@@ -306,11 +306,11 @@ public class BinarySearchTree<E extends Comparable<E>>
      *        sucessor (is)
      * @return The data in the is
      */
-    private E findSmallestChild(Node<E> parent) {
+    private Track findSmallestChild(Node<Track> parent) {
         // If the left child has no left child, it is
         // the inorder sucessor.
         if (parent.left.left == null) {
-            E returnValue = parent.left.data;
+            Track returnValue = parent.left.data;
             parent.left = parent.left.right;
             return returnValue;
         } else {
@@ -329,13 +329,13 @@ public class BinarySearchTree<E extends Comparable<E>>
      * useful to verify some of the tests.
      * @return 
      */
-    public List<E> toList() {
-        List<E> result = new ArrayList<>();
+    public List<Track> toList() {
+        List<Track> result = new ArrayList<>();
         toList(result, root);
         return result;
     }
 
-    private void toList(List<E> result, Node<E> node) {
+    private void toList(List<Track> result, Node<Track> node) {
         if (node == null) {
             return;
         }

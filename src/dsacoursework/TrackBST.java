@@ -17,22 +17,23 @@ public class TrackBST {
     BinarySearchTree<String> myTrackBST = new BinarySearchTree();
     
     TrackBST() {
-        System.out.println("TrackBST object created");
+        loadData();
     }
     
     /** Loads a file containing a number of Tracks into a BinarySearchTree.
     */
     public void loadData() {
+        String data = "";
         try {
             File myObj = new File("../dsaCoursework/src/dsaCoursework/trackInput");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
+                data = myReader.nextLine();
+                myTrackBST.add(data);
             }
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            System.out.println("An error occurred inserting." + data);
             e.printStackTrace();
         }
     }

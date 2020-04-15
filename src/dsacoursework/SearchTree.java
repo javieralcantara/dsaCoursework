@@ -3,9 +3,9 @@ package dsacoursework;
 /**
  * Interface to define a search tree
  * @author Koffman and Wolfgang
- * @param <E>
+ * @param <Track>
  **/
-public interface SearchTree<E extends Comparable<E>>  {
+public interface SearchTree<Track>  {
 
     /**
      * Inserts item where it belongs in the tree.
@@ -13,14 +13,14 @@ public interface SearchTree<E extends Comparable<E>>  {
      * @return true If the item is inserted, false if the
      *         item was already in the tree.
      */
-    boolean add(E item);
+    boolean add(Track item);
 
     /**
      * Determine if an item is in the tree
      * @param target Item being sought in tree
      * @return true If the item is in the tree, false otherwise
      */
-    boolean contains(E target);
+    boolean contains(Track target);
 
     /**
      * Find an object in the tree
@@ -29,7 +29,7 @@ public interface SearchTree<E extends Comparable<E>>  {
      *         equal as determined by compareTo to the target. If not found
      *         null is returned.
      */
-    E find(E target);
+    Track find(Track target);
 
     /**
      * Removes target from tree.
@@ -39,7 +39,7 @@ public interface SearchTree<E extends Comparable<E>>  {
      * null is returned.
      * @post target is not in the tree
      */
-    E delete(E target);
+    Track delete(Track target);
 
     /**
      * Removes target from tree.
@@ -47,5 +47,5 @@ public interface SearchTree<E extends Comparable<E>>  {
      * @return true if the object was in the tree, false otherwise
      * @post target is not in the tree
      */
-    boolean remove(E target);
+    boolean remove(Track target);
 }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Javier Alcántara García
  */
-public class Track {
+public class Track{
     private String id, title, artist, length, composer, releaseDate, album, genre;
 
 
@@ -175,6 +175,20 @@ public class Track {
     void displayTrackInfo() {
         System.out.println("Track: "+ this.getTrackInfo());
         System.lineSeparator();
+    }
+    
+    int compareTo(Track compareTrack) {
+        int trackIdToCompare;
+        try {
+            trackIdToCompare = Integer.parseInt(compareTrack.getId());
+            
+        }
+        catch (NumberFormatException e)
+        {
+            trackIdToCompare = 0;
+        }
+        
+        return Integer.parseInt(this.id) - trackIdToCompare;   
     }
 
 }
