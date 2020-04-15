@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author Javier Alcántara García
  */
 public class TrackBST {
-    BinarySearchTree<String> myTrackBST = new BinarySearchTree();
+    BinarySearchTree<Track> myTrackBST = new BinarySearchTree();
     
     TrackBST() {
         loadData();
@@ -24,12 +24,14 @@ public class TrackBST {
     */
     public void loadData() {
         String data = "";
+        String[] elements;
         try {
             File myObj = new File("../dsaCoursework/src/dsaCoursework/trackInput");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 data = myReader.nextLine();
-                myTrackBST.add(data);
+                elements = data.split(",");
+                myTrackBST.add(new Track(elements[0],elements[1],elements[2],elements[3],elements[4],elements[5],elements[6],elements[7]));
             }
             myReader.close();
         } catch (FileNotFoundException e) {

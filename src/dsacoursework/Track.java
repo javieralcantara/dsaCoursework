@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Javier Alcántara García
  */
-public class Track{
+public class Track implements Comparable<Track>{
     private String id, title, artist, length, composer, releaseDate, album, genre;
 
 
@@ -177,7 +177,8 @@ public class Track{
         System.lineSeparator();
     }
     
-    int compareTo(Track compareTrack) {
+    @Override
+    public int compareTo(Track compareTrack) {
         int trackIdToCompare;
         try {
             trackIdToCompare = Integer.parseInt(compareTrack.getId());
