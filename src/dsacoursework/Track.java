@@ -178,8 +178,13 @@ public class Track implements Comparable<Track>{
     }
     
     @Override
+    public String toString() {
+        return this.getTrackInfo() + "\n";
+    }
+    
+    @Override
     public int compareTo(Track compareTrack) {
-        int trackIdToCompare;
+        /*int trackIdToCompare;
         try {
             trackIdToCompare = Integer.parseInt(compareTrack.getId());
             
@@ -189,7 +194,8 @@ public class Track implements Comparable<Track>{
             trackIdToCompare = 0;
         }
         
-        return Integer.parseInt(this.id) - trackIdToCompare;   
+        return Integer.parseInt(this.id) - trackIdToCompare;   */
+        return this.artist.compareTo(compareTrack.artist);
     }
 
 }

@@ -38,6 +38,19 @@ public class TrackBST {
             System.out.println("An error occurred inserting." + data);
             e.printStackTrace();
         }
+        displayArtistsAscending();
+        displayArtistsDescending();
     }
+    
+    public void displayArtistsAscending() {
+        //READ ABOUT INORDER POSTORDER ETC
+        System.out.println(myTrackBST.toList());
+    }
+    
+    public void displayArtistsDescending() {
+        //STILL NOT WORKING
+        System.out.println(myTrackBST.postorderToString());
+    }
+    
     
 }

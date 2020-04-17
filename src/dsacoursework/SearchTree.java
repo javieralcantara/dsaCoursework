@@ -3,9 +3,9 @@ package dsacoursework;
 /**
  * Interface to define a search tree
  * @author Koffman and Wolfgang
- * @param <Track>
+ * @param <E>
  **/
-public interface SearchTree<Track>  {
+public interface SearchTree<E>  {
 
     /**
      * Inserts item where it belongs in the tree.
@@ -13,14 +13,14 @@ public interface SearchTree<Track>  {
      * @return true If the item is inserted, false if the
      *         item was already in the tree.
      */
-    boolean add(Track item);
+    boolean add(E item);
 
     /**
      * Determine if an item is in the tree
      * @param target Item being sought in tree
      * @return true If the item is in the tree, false otherwise
      */
-    boolean contains(Track target);
+    boolean contains(E target);
 
     /**
      * Find an object in the tree
@@ -29,7 +29,7 @@ public interface SearchTree<Track>  {
      *         equal as determined by compareTo to the target. If not found
      *         null is returned.
      */
-    Track find(Track target);
+    E find(E target);
 
     /**
      * Removes target from tree.
@@ -39,7 +39,7 @@ public interface SearchTree<Track>  {
      * null is returned.
      * @post target is not in the tree
      */
-    Track delete(Track target);
+    E delete(E target);
 
     /**
      * Removes target from tree.
@@ -47,5 +47,5 @@ public interface SearchTree<Track>  {
      * @return true if the object was in the tree, false otherwise
      * @post target is not in the tree
      */
-    boolean remove(Track target);
+    boolean remove(E target);
 }
