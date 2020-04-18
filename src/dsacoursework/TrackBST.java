@@ -7,6 +7,8 @@ package dsacoursework;
 
 import java.io.File;
 import java.io.FileNotFoundException; 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -40,17 +42,46 @@ public class TrackBST {
         }
         displayArtistsAscending();
         displayArtistsDescending();
+        displayAllArtists();
     }
     
     public void displayArtistsAscending() {
-        //READ ABOUT INORDER POSTORDER ETC
         System.out.println(myTrackBST.toList());
     }
     
     public void displayArtistsDescending() {
-        //STILL NOT WORKING
-        System.out.println(myTrackBST.postorderToString());
+        List<Track> result = myTrackBST.toList();
+        int size = result.size();
+        List<Track> reversed = new ArrayList<>(size);
+        
+        for(int i = result.size() -1; i >= 0; i--) {
+            reversed.add(result.get(i));
+        }
+        System.out.println(reversed);
     }
+    
+    public void displayAllArtists() {
+        List<Track> myList = myTrackBST.toList();
+        int size = myList.size();
+        List<String> artists = new ArrayList<>(size);
+        
+        for(int i = 0; i < myList.size(); i++) {
+            artists.add(myList.get(i).getArtist());
+        }
+        System.out.println(artists);
+    }
+    
+    public void displayAvailableForUse() {
+        List<Track> myList = myTrackBST.toList();
+        int size = myList.size();
+        List<Track> artists = new ArrayList<>(size);
+        
+        for(int i = 0; i < myList.size(); i++) {
+            //todo
+         }
+        System.out.println(artists);
+    }
+    
     
     
 }
