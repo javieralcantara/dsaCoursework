@@ -172,30 +172,32 @@ public class Track implements Comparable<Track>{
         return trackInfo;
     }
 
+    
+    /** Displays the Track’s information. 
+     * This includes all the parameters a Track holds.
+    */
     void displayTrackInfo() {
         System.out.println("Track: "+ this.getTrackInfo());
         System.lineSeparator();
     }
     
+    /** Overrides toString() method to print a Track object.
+     * @return A String representing a Track (look getTrackInfo()).
+    */
     @Override
     public String toString() {
         return this.getTrackInfo() + "\n";
     }
     
+    /** Overrides compareTo() method to compare two Track objects.
+     * @return An Integer representing if the first Track is bigger than the second one.
+     *         I compare their artists names in lexicographical order to do so. If both Tracks
+     *         belong to the same artist, it returns -1 
+    */
     @Override
     public int compareTo(Track compareTrack) {
-        /*int trackIdToCompare;
-        try {
-            trackIdToCompare = Integer.parseInt(compareTrack.getId());
-            
-        }
-        catch (NumberFormatException e)
-        {
-            trackIdToCompare = 0;
-        }
+        int value = this.artist.compareTo(compareTrack.artist);
         
-        return Integer.parseInt(this.id) - trackIdToCompare;   */
-        return this.artist.compareTo(compareTrack.artist);
+        return value == 0 ? -1 : value;  
     }
-
 }

@@ -40,15 +40,18 @@ public class TrackBST {
             System.out.println("An error occurred inserting." + data);
             e.printStackTrace();
         }
-        displayArtistsAscending();
-        displayArtistsDescending();
-        displayAllArtists();
     }
     
+    /** Displays the BST in ascending order by Artist. 
+     * It makes use of toList() method built in BinarySeatchTree.
+    */
     public void displayArtistsAscending() {
         System.out.println(myTrackBST.toList());
     }
     
+    /** Displays the BST in descending order by Artist. 
+     * It makes use of toList() method built in BinarySeatchTree, reversing the obtained value.
+    */
     public void displayArtistsDescending() {
         List<Track> result = myTrackBST.toList();
         int size = result.size();
@@ -60,6 +63,9 @@ public class TrackBST {
         System.out.println(reversed);
     }
     
+    /** Displays the Artist of each element in the BST. 
+     * It makes use of toList() method built in BinarySeatchTree.
+    */
     public void displayAllArtists() {
         List<Track> myList = myTrackBST.toList();
         int size = myList.size();
@@ -71,15 +77,11 @@ public class TrackBST {
         System.out.println(artists);
     }
     
+    /** Displays the BST. 
+     * It makes use of toList() method built in BinarySeatchTree.
+    */
     public void displayAvailableForUse() {
-        List<Track> myList = myTrackBST.toList();
-        int size = myList.size();
-        List<Track> artists = new ArrayList<>(size);
-        
-        for(int i = 0; i < myList.size(); i++) {
-            //todo
-         }
-        System.out.println(artists);
+        System.out.println(myTrackBST.toList());
     }
     
     

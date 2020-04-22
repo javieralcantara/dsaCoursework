@@ -61,12 +61,12 @@ public class DsaCoursework {
     
     private void testTrackClass() {
         Track emptyTrack = new Track();
-        Track myTrackOne = new Track("654321", "Wow", "Post Malone", "2:30", "Post Malone", "24/12/2018", "Hollywood's Bleeding", "Hip hop");
-        Track myTrackTwo = new Track("567890", "Lose Yourself", "Eminem", "5:20", "Eminem", "28/10/2002", "Curtain Call", "Hip hop");
-        Track myTrackThree = new Track("102938", "Tiptoe", "Imagine Dragons", "3:14", "Imagine Dragons", "06/03/2012", "Night Visions", "Indie rock");
-        Track myTrackFour = new Track("748392", "Bohemian Rhapsody", "Queen", "5:55", "Queen", "31/10/1975", "A Night at the Opera", "Hard rock");
+        Track myTrackOne = new Track("1", "Wow", "Post Malone", "2:30", "Post Malone", "24/12/2018", "Hollywood's Bleeding", "Hip hop");
+        Track myTrackTwo = new Track("2", "Lose Yourself", "Eminem", "5:20", "Eminem", "28/10/2002", "Curtain Call", "Hip hop");
+        Track myTrackThree = new Track("3", "Tiptoe", "Imagine Dragons", "3:14", "Imagine Dragons", "06/03/2012", "Night Visions", "Indie rock");
+        Track myTrackFour = new Track("4", "Bohemian Rhapsody", "Queen", "5:55", "Queen", "31/10/1975", "A Night at the Opera", "Hard rock");
 
-        emptyTrack.setId("123456");
+        emptyTrack.setId("5");
         emptyTrack.setTitle("Shape of You");
         emptyTrack.setArtist("Ed Sheeran");
         emptyTrack.setLength("3:56");
@@ -83,11 +83,11 @@ public class DsaCoursework {
     }
     
     private void testTrackListClass() {
-        Track emptyTrack = new Track("123456", "Shape of You", "Ed Sheeran", "3:56", "Ed Sheeran", "06/01/2017", "÷", "Pop");
-        Track myTrackOne = new Track("654321", "Wow", "Post Malone", "2:30", "Post Malone", "24/12/2018", "Hollywood's Bleeding", "Hip hop");
-        Track myTrackTwo = new Track("567890", "Lose Yourself", "Eminem", "5:20", "Eminem", "28/10/2002", "Curtain Call", "Hip hop");
-        Track myTrackThree = new Track("102938", "Tiptoe", "Imagine Dragons", "3:14", "Imagine Dragons", "06/03/2012", "Night Visions", "Indie rock");
-        Track myTrackFour = new Track("748392", "Bohemian Rhapsody", "Queen", "5:55", "Queen", "31/10/1975", "A Night at the Opera", "Hard rock");
+        Track emptyTrack = new Track("1", "Shape of You", "Ed Sheeran", "3:56", "Ed Sheeran", "06/01/2017", "÷", "Pop");
+        Track myTrackOne = new Track("2", "Wow", "Post Malone", "2:30", "Post Malone", "24/12/2018", "Hollywood's Bleeding", "Hip hop");
+        Track myTrackTwo = new Track("3", "Lose Yourself", "Eminem", "5:20", "Eminem", "28/10/2002", "Curtain Call", "Hip hop");
+        Track myTrackThree = new Track("4", "Tiptoe", "Imagine Dragons", "3:14", "Imagine Dragons", "06/03/2012", "Night Visions", "Indie rock");
+        Track myTrackFour = new Track("5", "Bohemian Rhapsody", "Queen", "5:55", "Queen", "31/10/1975", "A Night at the Opera", "Hard rock");
         
         TrackList myList = new TrackList();
         myList.addTrack(emptyTrack);
@@ -108,6 +108,10 @@ public class DsaCoursework {
     private void testTrackBSTClass() {
         //todo
         TrackBST myTree = new TrackBST();
+        myTree.displayArtistsAscending();
+        myTree.displayArtistsDescending();
+        myTree.displayAllArtists();
+        myTree.displayAvailableForUse();
     }
     
     public String getMenuChoice( ) {
